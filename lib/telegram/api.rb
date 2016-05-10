@@ -239,7 +239,7 @@ module Telegram
     def create_group_chat(chat_topic, *users, &callback)
       assert!
       members = users.join(" ")
-      @connection.communicate(['create_group_chat', chat_topic.escape!, members], &callback)
+      @connection.communicate(['create_group_chat', chat_topic, members], &callback)
     end
 
     def add_contact(phone_number, first_name, last_name, &callback)
